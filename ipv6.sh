@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 #!/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
@@ -91,8 +89,8 @@ IP6=$(curl -6 -s icanhazip.com | cut -f1-4 -d':')
 
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 
-FIRST_PORT=22000
-LAST_PORT=22700
+FIRST_PORT=281100
+LAST_PORT=281800
 
 gen_data >$WORKDIR/data.txt
 gen_iptables >$WORKDIR/boot_iptables.sh
@@ -114,4 +112,3 @@ gen_proxy_file_for_user
 rm -rf /root/3proxy-3proxy-0.8.6
 
 echo "Starting Proxy"
-</html>
